@@ -28,11 +28,11 @@ SYStem.CONFIG ETMFUNNELPORT    0.
 SYStem.CONFIG CTICONFIG        CORTEXV1
 
 data.load.elf @VMLINUX@ /nocode
-task.config /opt/t32/demo/arm/kernel/linux/linux-3.x/linux3.t32
-menu.reprogram /opt/t32/demo/arm/kernel/linux/linux-3.x/linux.men
-SYStem.Option DACR ON
-SYStem.Option MMUSPACES ON
-MMU.FORMAT LINUX swapper_pg_dir 0xc0000000--0xc1ffffff 0x80000000
-TRANSlation.COMMON 0xc0000000--0xffffffff
-TRANSlation.TableWalk ON
-TRANSlation.ON
+; task.config /opt/t32/demo/arm/kernel/linux/linux-3.x/linux3.t32
+; menu.reprogram /opt/t32/demo/arm/kernel/linux/linux-3.x/linux.men
+; SYStem.Option DACR ON
+; SYStem.Option MMUSPACES ON
+; MMU.FORMAT LINUX swapper_pg_dir 0xc0000000--0xc1ffffff 0x80000000
+; TRANSlation.COMMON 0xc0000000--0xffffffff
+; TRANSlation.TableWalk ON
+; TRANSlation.ON
