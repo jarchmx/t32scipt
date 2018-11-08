@@ -1,7 +1,4 @@
 title "AR75XX APSS debug"
-; data.load.binary /home/jarhu/work/log/QTI9X28-5061/EEL-897/OCIMEM.BIN 0x8600000
-; data.load.binary /home/jarhu/work/log/QTI9X28-5061/EEL-897/DDRCS0.BIN 0x80000000
-; PER.S.F C15:0x2 %L 0x80004000
 
 SYSTEM.CPU CORTEXA7
 SYSTEM.JTAGCLOCK  CTCK 20.0MHZ
