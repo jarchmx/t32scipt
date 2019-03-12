@@ -26,13 +26,19 @@ SYStem.CONFIG.CTIBASE          DAP:0x80043000
 SYStem.CONFIG ETMBASE          DAP:0x8004200
 SYStem.CONFIG ETMFUNNELPORT    0.
 SYStem.CONFIG CTICONFIG        CORTEXV1
+SYStem.Option DACR ON
+SETUP.IMASKASM ON
+SETUP.IMASKHLL OFF
 
 data.load.elf @VMLINUX@ /nocode
 ; task.config /opt/t32/demo/arm/kernel/linux/linux-3.x/linux3.t32
 ; menu.reprogram /opt/t32/demo/arm/kernel/linux/linux-3.x/linux.men
-; SYStem.Option DACR ON
-; SYStem.Option MMUSPACES ON
-; MMU.FORMAT LINUX swapper_pg_dir 0xc0000000--0xc1ffffff 0x80000000
-; TRANSlation.COMMON 0xc0000000--0xffffffff
-; TRANSlation.TableWalk ON
-; TRANSlation.ON
+SYStem.Option MMUSPACES ON
+MMU.FORMAT LINUX swapper_pg_dir 0xc0000000--0xc1ffffff 0x80000000
+TRANSlation.COMMON 0xbf000000--0xffffffff
+TRANSlation.COMMON 0xc0000000--0xffffffff
+TRANSlation.TableWalk ON
+TRANSlation.ON
+
+GROUP.Create "kernel" 0xC0000000--0xFFFFFFFF /RED
+
