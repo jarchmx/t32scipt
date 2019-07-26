@@ -37,13 +37,14 @@ SYStem.CONFIG.CTI1.Base DAP:0x87003000
 SYStem.CONFIG CTICONFIG        CORTEXV1
 
 
-; tronchip.SET FIQ OFF
-; tronchip.SET IRQ OFF
-; tronchip.SET DABORT OFF
-; tronchip.SET PABORT OFF
-; tronchip.SET UNDEF off
-; tronchip.SET SWI OFF
-; tronchip.SET RESET OFF
+tronchip.SET FIQ OFF
+tronchip.SET IRQ OFF
+tronchip.SET DABORT OFF
+tronchip.SET PABORT OFF
+tronchip.SET UNDEF off
+tronchip.SET SWI OFF
+tronchip.SET RESET OFF
+
 tronchip.CONVert ON
 tronchip.MatchZone ON
 
@@ -51,10 +52,11 @@ data.load.elf @VMLINUX@ /nocode
 task.config /opt/t32/demo/arm/kernel/linux/linux-3.x/linux3.t32
 menu.reprogram /opt/t32/demo/arm/kernel/linux/linux-3.x/linux.men
 
-; MMU.FORMAT LINUX swapper_pg_dir 0xc0000000--0xc1ffffff 0x80000000
-; TRANSlation.COMMON 0xbf000000--0xffffffff
-; TRANSlation.TableWalk ON
-; TRANSlation.ON
+SYStem.Option MMUSPACES ON
+MMU.FORMAT LINUX swapper_pg_dir 0xc0000000--0xc1ffffff 0x80000000
+TRANSlation.COMMON 0xbf000000--0xffffffff
+TRANSlation.TableWalk ON
+TRANSlation.ON
 
-; GROUP.Create "kernel" 0xC0000000--0xFFFFFFFF /RED
+GROUP.Create "kernel" 0xC0000000--0xFFFFFFFF /RED
 
