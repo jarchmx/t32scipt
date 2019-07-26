@@ -31,8 +31,8 @@ SETUP.IMASKASM ON
 SETUP.IMASKHLL OFF
 
 data.load.elf @VMLINUX@ /nocode
-; task.config /opt/t32/demo/arm/kernel/linux/linux-3.x/linux3.t32
-; menu.reprogram /opt/t32/demo/arm/kernel/linux/linux-3.x/linux.men
+task.config /opt/t32/demo/arm/kernel/linux/linux-3.x/linux3.t32
+menu.reprogram /opt/t32/demo/arm/kernel/linux/linux-3.x/linux.men
 SYStem.Option MMUSPACES ON
 MMU.FORMAT LINUX swapper_pg_dir 0xc0000000--0xc1ffffff 0x80000000
 TRANSlation.COMMON 0xbf000000--0xffffffff
